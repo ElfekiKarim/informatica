@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stampa Numeri</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Stampa Numeri</h1>
+
+  <label for="numero">Inserisci un numero: </label>
+  <input type="number" id="numero">
+
+  <button onclick="stampaNumeri()">Stampa Numeri</button>
+
+  <div id="output"></div>
+
+  <script>
+    function stampaNumeri() {
+      var inputNumero = document.getElementById('numero').value;
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ''; 
+
+      for (var i = 1; i <= inputNumero; i++) {
+        var numeroText = document.createTextNode(i);
+        var br = document.createElement('br');
+
+        outputDiv.appendChild(numeroText);
+        outputDiv.appendChild(br);
+      }
+
+      var percentuale = inputNumero * 0.1;
+      var percentualeText = document.createTextNode('10% del numero: ' + percentuale);
+
+      outputDiv.appendChild(percentualeText);
+    }
+  </script>
+
+</body>
+</html>
