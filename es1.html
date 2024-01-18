@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juve Merda Generator</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Juve Merda Generator</h1>
+
+  <button onclick="generateJuveMerda()">Genera Juve Merda</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generateJuveMerda() {
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ''; // Pulisce il contenuto precedente
+
+      for (var i = 1; i <= 100; i++) {
+        var juveMerdaText = document.createTextNode('juve merda ' + i);
+        var br = document.createElement('br');
+
+        outputDiv.appendChild(juveMerdaText);
+        outputDiv.appendChild(br);
+      }
+    }
+  </script>
+
+</body>
+</html>
