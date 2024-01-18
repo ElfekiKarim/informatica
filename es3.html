@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatore e Tabellina</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      color: #333;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contatore e Tabellina</h1>
+
+  <div id="output"></div>
+
+  <script>
+    var contatore = 1;
+
+    function avviaContatore() {
+      var outputDiv = document.getElementById('output');
+      outputDiv.innerHTML = ''; // Pulisce il contenuto precedente
+
+      var intervallo = setInterval(function() {
+        outputDiv.innerText = 'Contatore: ' + contatore;
+
+        if (contatore === 5) {
+          clearInterval(intervallo);
+          stampaTabellina(outputDiv);
+        } else {
+          contatore++;
+        }
+      }, 1000);
+    }
+
+    function stampaTabellina(outputDiv) {
+      outputDiv.innerHTML = 'Tabellina:';
+     
+      for (var i = 1; i <= 10; i++) {
+        var numeroText = document.createElement('div');
+        numeroText.innerText = i;
+        outputDiv.appendChild(numeroText);
+      }
+    }
+
+    avviaContatore();
+  </script>
+
+</body>
+</html>
