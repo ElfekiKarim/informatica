@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array1</title>
+    <style>
+        body {
+            background-color: rgb(255, 0, 43);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+ 
+    <p id="out"></p>
+    <div>
+        <button id="countButton" onclick="countElements()">Conta frutti</button>
+        <button id="addButton" onclick="addOrder()">Ordina un frutto</button>
+        <button id="deleteButton" onclick="deleteElement()">Elimina</button>
+        <p id="fruitsOut"></p>
+    </div>
+
+
+
+
+    <script>
+        let fruits = ["Mela", "Banana", "Arancia", "Pera", "Kiwi"];
+        let orders = [];
+
+
+
+
+       
+        function displayOutput(message) {
+            document.getElementById("out").innerHTML = message;
+        }
+
+
+
+
+       
+        function displayFruits() {
+            document.getElementById("fruitsOut").innerHTML = fruits.join(", ");
+        }
+
+
+
+
+       
+        function countElements() {
+            displayOutput("Numero di frutti: " + fruits.length);
+        }
+
+
+
+
+       
+        function addOrder() {
+            let fruitName = prompt("Inserisci il nome del frutto da ordinare:");
+            if (fruitName) {
+                fruits.push(fruitName);
+                displayOutput("Hai aggiunto " + fruitName + " all'ordine.");
+                displayFruits();
+            } else {
+                displayOutput("Nessun frutto inserito.");
+            }
+        }
+
+
+
+
+       
+        function deleteElement() {
+            let fruitName = prompt("Inserisci il nome del frutto da eliminare:");
+            let index = fruits.indexOf(fruitName);
+            if (index !== -1) {
+                fruits.splice(index, 1);
+                displayFruits();
+            } else {
+                displayOutput("Frutto non trovato.");
+            }
+        }
+       
+        displayFruits();
+    </script>
+   
+</body>
+</html>
