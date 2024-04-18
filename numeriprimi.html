@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserimento di numeri in un array</title>
+</head>
+         tra 0-100 ci sono 25 numeri primi
+         tra 100-200 ci sono 21 numeri primi
+         tra 200-300 ci sono 14 numeri primi
+         tra 300-400 ci sono 14 numeri primi
+         tra 400-500 ci sono 17 numeri primi
+         tra 500-600 ci sono 14 numeri primi
+         tra 600-700 ci sono 16 numeri primi
+         tra 700-800 ci sono 14 numeri primi
+         tra 800-900 ci sono 15 numeri primi
+         tra 900-100 ci sono 14 numeri primi
+<body>
+
+    <div id="output">
+     
+    </div>
+
+
+    <script>
+        let arrayNumeriInteri=[];
+        let arrayNumeriPrimi=[];
+        //CaricaArray();
+
+        // tra 0-100 ci sono 25 numeri primi
+        // tra 100-200 ci sono 21 numeri primi
+        //tra 200-300 ci sono 14 numeri primi
+        // tra 300-400 ci sono 14 numeri primi
+        // tra 400-500 ci sono 17 numeri primi
+        // tra 500-600 ci sono 14 numeri primi
+        // tra 600-700 ci sono 16 numeri primi
+        // tra 700-800 ci sono 14 numeri primi
+        // tra 800-900 ci sono 15 numeri primi
+        // tra 900-100 ci sono 14 numeri primi
+
+let outputDiv=document.getElementById("output");
+        for(let numero=1;numero<=1000;numero++)
+        {
+            let divisoriNumero=Divisori(numero);
+           // console.log("Divisori di "+ numero+ ": "+divisoriNumero.join(" "));
+           let divisoriString= "Divisori di " + numero + " : "+ divisoriNumero.join(" ");
+            outputDiv.innerHTML+=" <p> "+ divisoriString + "</p>"
+        }
+       
+       
+
+
+
+
+        function CaricaArray()
+        {for(let i =0;i<1000;i++)
+            {arrayNumeriInteri.push(i);
+            }
+            console.log(arrayNumeriInteri)
+        }
+
+     function Divisori(n){
+// la funzione da i divisori di n cioè trova i possibili divisori
+// es: n=50   divisori: 1,2,5,10,25
+            //attenzione creo un ciclo fino a n/2 che controlla
+            // se il resto della divisione tra n e i numero che
+            //cresce da 2 a n/2 sia =0
+        let divisori=[];    
+        let massimodivisore=n/2;
+        for(i=2;i<=massimodivisore;i++ )
+        {
+             if (n%i==0)
+               { divisori.push(i)
+               }
+       }
+       if (divisori.length==0)
+        {
+            divisori.push("Primo")
+            arrayNumeriPrimi.push(n)
+        }
+
+       return divisori;
+     }
+
+
+    </script>
+</body>
+</html>
