@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushi World!</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- Custom CSS -->
+<style>
+   
+    body {
+        background-image: url('https://images5.alphacoders.com/792/792679.jpg');
+        background-size: cover;
+        cursor: url('https://banner2.cleanpng.com/20180409/xpq/kisspng-nissan-skyline-gt-r-sports-car-nissan-gt-r-race-car-5acb6ae140b9d9.0689901515232806092651.jpg'), auto;
+    }
+    .navbar {
+        background-image: url('https://wallpapers.com/images/hd/fast-and-furious-1970-dodge-charger-lmk81um1c4r1tnyd.jpgg');
+        background-size: cover;
+    }
+    .card {
+        width: 150%;
+        height: 500px; /* altezza leggermente aumentata */
+        margin-bottom: 20px;
+    }
+    h1 {
+        color: white;
+        animation: fadeIn 2s forwards;
+        font-size: 3rem;
+        font-style: italic;
+        -webkit-text-stroke: 2px darkred;
+        text-stroke: 2px darkred;
+        padding: 10px;
+    }
+    .lead {
+        color: white;
+    }
+    .carousel-item img {
+        max-height: 450px; /* altezza leggermente aumentata */
+        object-fit: cover;
+    }
+    .btn-primary,
+    .btn-secondary {
+        background-color: black;
+        border: 1px solid black;
+    }
+    .btn-primary:hover,
+    .btn-secondary:hover {
+        background-color: #222;
+        border: 1px solid #222;
+    }
+    /* Stile per l'immagine di Fast and Furious accanto al titolo */
+    #fastAndFuriousImage {
+        width: 100px;
+        height: auto;
+        margin-right: 10px;
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-light" style="background-color: transparent;">
+    <!-- Immagine di Fast and Furious accanto al titolo -->
+    <img src="https://media-assets.wired.it/photos/6274f381c372be30c58f1080/16:9/w_2560%2Cc_limit/159835776" id="fastAndFuriousImage" alt="Fast and Furious Logo">
+    droni
+</nav>
+
+<div class="container my-5 text-center" style="max-width: 600px;">
+    <h1>Fast and Furious</h1>
+    <p class="lead">macchine sportive</p>
+    <button type="button" class="btn btn-primary">INFORMAZIONI MACCHINE</button>
+    <button type="button" class="btn btn-secondary">comprale subito</button>
+</div>
+
+<div class="container">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="400" src="https://www.youtube.com/embed/Wkr2SxVU_dA?si=XwgQJ8ouwpZlLWoS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">NISSAN GT R 34</h5>
+                                <p class="card-text"></p>
+                                <a href="https://zeperfs.com/it/fiche265-nissan-skyline-gt-r.htm" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="400" src="https://www.youtube.com/embed/8DKK_o9U3W4?si=ewBtSCgCdIkWvVSd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">SUPRA</h5>
+                                <p class="card-text"></p>
+                                <a href="https://www.automoto.it/catalogo/toyota/supra/30i-twin-turbo-24v-cat-sport-roof/44987" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="400" src="https://www.youtube.com/embed/LDjK8VD0itE?si=YNpxj55FTnlXCuPJ&amp;start=16" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">MITSUBISHI ECLIPSE </h5>
+                                <p class="card-text"></p>
+                                <a href="https://www.automoto.it/catalogo/mitsubishi/eclipse/eu--20-16v-dohc-cat-gs/29485" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="450" src="https://www.youtube.com/embed/AdFK_ZJ5vxA?si=JTRFRJaDoufBkmzY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">LYKAN</h5>
+                                <a href=" https://www.auto-data.net/it/w-motors-lykan-hypersport-3.7-780hp-32095" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="450" src="https://www.youtube.com/embed/s1ReDhlq8JA?si=lYM38INTN4IzHuHd&amp;start=10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">MITSUBISHI EVO 7</h5>
+                                <a href=" https://zeperfs.com/it/fiche2718-mitsubishi-lancer-evo-x-gsr.htm" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 6 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="450" src="https://www.youtube.com/embed/2iYatOoyhjo?si=4Sg6cgXfFRSnZNKO&amp;start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">DODGE CHARGER SRT</h5>
+                                <a href="https://zeperfs.com/it/fiche8888-dodge-charger-srt-hellcat-redeye.htm" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 7 -->
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-sm d-flex justify-content-around">
+                        <div class="card">
+                            <iframe width="1295" height="450" src="https://www.youtube.com/embed/ubMXBEj6d7w?si=rUSIBNtR9tK5QnZn&amp;start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <div class="card-body">
+                                <h5 class="card-title">NISSAN 350Z</h5>
+                                <a href=" https://www.automoto.it/catalogo/nissan/350z-coupe/coupe-35-v6-lev-1/30766" class="btn btn-primary">Clicca per sapere di più </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
