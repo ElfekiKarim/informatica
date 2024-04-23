@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Gioco Sumo</title>
+    <style>
+        /* Campo da gioco */
+        #campo {
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            position: relative;
+            border: 2px solid black;
+        }
+
+        /* Cerchio al centro */
+        #cerchio {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50px;
+            position: absolute;
+            top: 150px;
+            left: 150px;
+        }
+
+        /* Giocatori */
+        #giocatore1 {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        #giocatore2 {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+       
+        #pulsante1,
+        #pulsante2 {
+            padding: 10px;
+            background-color: lightgray;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="campo">
+        <div id="cerchio"></div>
+    </div>
+
+   
+    <div id="giocatore1">
+        <button id="pulsante1">Giocatore 1</button>
+    </div>
+
+    <div id="giocatore2">
+        <button id="pulsante2">Giocatore 2</button>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const cerchio = document.getElementById("cerchio");
+        const pulsante1 = document.getElementById("pulsante1");
+        const pulsante2 = document.getElementById("pulsante2");
+
+        let posizione = 200;
+        let intervallo;
+        let tempoRimanente = 60; i
+
+        const startGame = () => {
+            intervallo = setInterval(() => {
+                tempoRimanente--;
+
+                if (tempoRimanente <= 0) {
+                    clearInterval(intervallo);
+                    determinareVincitore();
+                }
+            }, 1000);
+        };
+
+        const determinareVincitore = () => {
+            const posizioneFinale = cerchio.style.left;
+
+            if (parseInt(posizioneFinale) <= 0) {
+                alert("Giocatore 1 ha vinto!");
+            } else if (parseInt(posizioneFinale) >= 300) {
+                alert("Giocatore 2 ha vinto!");
+            } else {
+                alert("Tempo scaduto, nessun vincitore!");
+            }
+        };
+
+        pulsante1.addEventListener("click", () => {
+            if (intervallo === undefined) {
+                startGame();
+            }
+            posizione -= 10;
+            cerchio.style.left = posizione + "px";
+        });
+
+        pulsante2.addEventListener("click", () => {
+            if (intervallo === undefined) {
+                startGame();
+            }
+            posizione += 10;
+            cerchio.style.left = posizione + "px";
+        });
+
+       
+        cerchio.style.left = "200px";
+    </script>
+</body>
+</html>
