@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteggio numeri primi</title>
+</head>
+<body>
+
+    <div id="output">
+     
+    </div>
+
+
+    <script>
+        let arrayNumeriPrimi = [];
+
+        // Funzione per verificare se un numero è primo
+        function èprimo(n) {
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+            if (n % 2 === 0 || n % 3 === 0) return false;
+            let i = 5;
+            while (i * i <= n) {
+                if (n % i === 0 || n % (i + 2) === 0) return false;
+                i += 6;
+            }
+            return true;
+        }
+
+        // Funzione per contare i numeri primi in un intervallo
+        function ContaNumeroPrimo(start, end) {
+            let count = 0;
+            for (let i = start; i < end; i++) {
+                if (èprimo(i)) {
+                    count++;
+                    arrayNumeriPrimi.push(i);
+                }
+            }
+            return count;
+        }
+
+        let outputDiv = document.getElementById("output");
+
+        // Conteggio dei numeri primi in intervalli specifici
+        let start = 0;
+        let end = 100;
+        while (end <= 10000) {
+            let primeCount = ContaNumeroPrimo(start, end);
+            outputDiv.innerHTML += "<p>Numeri primi tra " + start + " e " + end + ": " + primeCount + "</p>";
+            start = end;
+            end += 100;
+        }
+
+    </script>
+</body>
+</html>
