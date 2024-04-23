@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore di Potenza Solare</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            color: yellow;
+        }
+        .signature {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcolatore di Potenza Solare</h1>
+    <form id="powerCalculator">
+        <label for="power">Potenza del pannello solare (W):</label><br>
+        <input type="number" id="power" name="power" required><br><br>
+       
+        <label for="quantity">Numero di pannelli solari:</label><br>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+       
+        <button type="button" onclick="calculatePower()">Calcola Potenza Totale</button><br><br>
+       
+        <label for="totalPower">Potenza totale possibile (kWh):</label><br>
+        <input type="text" id="totalPower" name="totalPower" readonly><br><br>
+    </form>
+
+    <div class="signature">Lavoro di Siddi</div>
+
+    <script>
+        function calculatePower() {
+           
+            let power = document.getElementById("power").value;
+            let quantity = document.getElementById("quantity").value;
+           
+           
+            let totalPower = (power * quantity) / 1000;
+           
+         
+            document.getElementById("totalPower").value = totalPower.toFixed(2); // Arrotondare a 2 cifre decimali
+        }
+    </script>
+</body>
+</html>
