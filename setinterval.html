@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indovina il numero</title>
+
+  <style>
+
+    #container_numero {
+      height: 200px;
+      width: 400px;
+      border: 1px solid black;
+      margin: 10px;
+      text-align: center;
+    }
+    #miocontainer {
+      height: 300px;
+      width: 500px;
+      padding: 10px;
+      border: 1px solid black;
+     
+      background-color: lightgray;
+      display: flex;
+    }
+    .button {
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 10px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #container_statistiche {
+      height: 200px;
+      width: 400px;
+      border-top: 0px solid black;
+      margin-top: 0px;
+      text-align: center;
+    }
+  </style>
+
+</head>
+<body>
+
+
+  <div id="miocontainer">
+    <div id="c_bottone1">
+      <button onclick="bottone(1)" class="button">1</button>
+    </div>
+    <div id="c_bottone2">
+      <button onclick="bottone(2)" class="button">2</button>
+    </div>
+    <div id="c_bottone3">
+      <button onclick="bottone(3)" class="button">3</button>
+    </div>
+    <div id="c_bottone4">
+      <button onclick="bottone(4)" class="button">4</button>
+    </div>
+    <div id="container_statistiche">
+      <h2 id="text1">Statistiche:</h2>
+      <p id="st"></p>
+    </div>
+  </div>
+
+  <script>
+    var lastClickTime = 0;
+
+    function bottone(p) {
+      var currentTime = performance.now();
+      var timeDifference = currentTime - lastClickTime;
+
+      if (lastClickTime !== 0) {
+        document.getElementById("st").innerHTML += "click: " + timeDifference.toFixed(2) + "ms<br>";
+      }
+
+      lastClickTime = currentTime;
+      aggiorna(p);
+    }
+
+    function aggiorna(p) {
+      if (p >= 1) {
+        console.log(p);
+        document.getElementById("st").innerHTML +=  + p + " ";
+      }
+    }
+  </script>
+</body>
+</html>
