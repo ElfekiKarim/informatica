@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1000 Squares</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+        .even { background-color: darkred; }
+        .odd { background-color: lightblue; }
+        .multiple-of-7 { background-color: lightcoral; }
+        .prime { background-color: yellow; color: black; }
+    </style>
+</head>
+<body>
+    <div class="container" id="square-container"></div>
+    <script>
+        function IsPrime(n) {
+            let bPrime = true;
+            let fat = 2;
+            while (fat <= n / 2) {
+                if (n % fat === 0) {
+                    bPrime = false;
+                    break;
+                }
+                fat++;
+            }
+            return bPrime;
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("square-container");
+
+            // Creare un array con numeri consecutivi a partire da 1000
+            const numbers = Array.from({ length: 1000 }, (_, i) => 1000 + i);
+
+            // Ciclo per creare e configurare i div
+            for (let i = 0; i < numbers.length; i++) {
+                const number = numbers[i];
+                const square = document.createElement("div");
+                square.classList.add("square");
+                square.textContent = number;
+
+                // Colorare il div in base alle condizioni date
+                if (IsPrime(number)) {
+                    square.classList.add("prime");
+                } else if (number % 7 === 0) {
+                    square.classList.add("multiple-of-7");
+                } else if (number % 2 === 0) {
+                    square.classList.add("even");
+                } else {
+                    square.classList.add("odd");
+                }
+
+                container.appendChild(square);
+            }
+        });
+    </script>
+</body>
+</html>
